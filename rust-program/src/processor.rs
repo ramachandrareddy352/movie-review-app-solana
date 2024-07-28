@@ -214,7 +214,7 @@ pub fn add_movie_review(
             token_program.key,
             token_mint.key,
             user_ata.key,
-            mint_auth.key,
+            mint_auth.key, // owner is program itself
             &[],
             10 * LAMPORTS_PER_SOL,
         )?,

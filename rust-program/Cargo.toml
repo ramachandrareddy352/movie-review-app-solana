@@ -1,14 +1,16 @@
 [package]
+edition = "2021"
 name = "pda-local"
 version = "0.1.0"
-edition = "2021"
 
 [features]
 no-entrypoint = []
 
 [dependencies]
-solana-program = "1.10.29"
 borsh = "0.9.3"
+solana-program = "~1.10.29"
+spl-associated-token-account = {version = "=1.0.5", features = ["no-entrypoint"]}
+spl-token = {version = "3.2.0", features = ["no-entrypoint"]}
 thiserror = "1.0.31"
 
 [lib]

@@ -76,7 +76,7 @@ export const Form: FC = () => {
         const [mintAuth] = await web3.PublicKey.findProgramAddress(
             [Buffer.from("token_auth")],
             new web3.PublicKey(MOVIE_REVIEW_PROGRAM_ID)
-        ) 
+        ) // mint auth is also a pda?
         console.log(mintAuth.toBase58()) // CAceUKg3snrdfMcTWH5MLjGmgh4oWeGMtscR1pcmx4ZB
 
         const userAta = await getAssociatedTokenAddress(tokenMint, publicKey)
@@ -89,7 +89,7 @@ export const Form: FC = () => {
             const ataInstruction = createAssociatedTokenAccountInstruction(
                 publicKey,
                 userAta,
-                publicKey,
+                publicKey, 
                 tokenMint
             )
 
